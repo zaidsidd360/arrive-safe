@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/logoTrans.png";
-import { X, Menu, ChevronDown, ChevronUp } from "lucide-react";
+import { X, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,7 +14,6 @@ const Navbar: React.FC = () => {
 	const menuItems = [
 		{ label: "Home", href: "/" },
 		{ label: "About Us", href: "/about" },
-		// { label: "Contact Us", href: "/contact" },
 		{ label: "Services", href: "/services" },
 		{
 			label: "Packages and Lessons",
@@ -30,21 +30,21 @@ const Navbar: React.FC = () => {
 	return (
 		<nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg shadow-md z-[9999]">
 			<div className="container mx-auto md:px-4 flex justify-between items-center h-24">
-				{/* Logo - Increased size */}
-				<div className="flex items-center">
+				{/* Logo */}
+				<Link to={"/"} className="flex items-center">
 					<img
 						src={Logo}
 						alt="Driving School Logo"
-						className="h-[10rem] md:h-[15rem] w-auto object-contain"
+						className="h-40 md:h-52 w-auto object-contain"
 					/>
-				</div>
+				</Link>
 
 				{/* Desktop Navigation */}
 				<div className="hidden md:flex space-x-6 items-center">
 					{menuItems.map((item, index) => (
 						<div
 							key={index}
-							className="relative group"
+							className="relative group h-min"
 							onMouseEnter={() =>
 								item.subItems && setActiveDropdown(item.label)
 							}
@@ -53,84 +53,75 @@ const Navbar: React.FC = () => {
 							}
 						>
 							{item.subItems ? (
-								<div className="relative">
+								<>
 									<button
 										className="
-                      flex items-center 
-                      px-4 py-2 
-                      bg-transparent 
-                      hover:bg-blue-50 
-                      hover:text-blue-600 
-                      rounded-lg 
-                      transition-all 
-                      duration-300 
-                      group
-                    "
+											flex items-center
+											px-4 py-2
+											text-lg
+											hover:bg-blue-50
+											hover:text-blue-600
+											rounded-lg
+											transition-all
+											duration-300
+										"
 									>
 										{item.label}
-										<span className="ml-2">
-											{activeDropdown === item.label ? (
-												<ChevronUp
-													size={20}
-													className="text-blue-600 group-hover:text-blue-700"
-												/>
-											) : (
-												<ChevronDown
-													size={20}
-													className="text-gray-500 group-hover:text-blue-600"
-												/>
-											)}
-										</span>
 									</button>
-
-									{/* Improved Dropdown with Persistent Hover */}
 									{activeDropdown === item.label && (
 										<div
 											className="
-                        absolute left-0 mt-2 
-                        bg-white shadow-lg 
-                        rounded-md 
-                        min-w-[200px] 
-                        py-2 
-                        z-50 
-                        border 
-                        border-gray-100
-                      "
+												absolute 
+												left-0 
+												min-w-[200px]
+												bg-white 
+												border 
+												border-gray-200 
+												rounded-lg 
+												shadow-lg 
+												py-2
+												z-50
+											"
+											style={{ top: "100%" }}
 										>
 											{item.subItems.map(
 												(subItem, subIndex) => (
-													<a
+													<Link
 														key={subIndex}
-														href={subItem.href}
+														to={subItem.href}
 														className="
-                            block px-4 py-2 
-                            hover:bg-blue-50 
-                            hover:text-blue-600 
-                            transition-colors
-                          "
+														block 
+														px-4 
+														py-2 
+														text-gray-700 
+														hover:bg-blue-50 
+														hover:text-blue-600
+														transition-colors
+														duration-200
+													"
 													>
 														{subItem.label}
-													</a>
+													</Link>
 												)
 											)}
 										</div>
 									)}
-								</div>
+								</>
 							) : (
-								<a
-									href={item.href}
+								<Link
+									to={item.href}
 									className="
-                  text-lg
-                    p-4 py-3
-                    hover:bg-blue-300 
-                    hover:text-gray-800
-                    rounded-lg 
-                    transition-all 
-                    duration-300
-                  "
+										text-lg
+										px-4 py-3
+										hover:bg-blue-50
+										hover:text-blue-600
+										rounded-lg
+										transition-all
+										duration-300
+									"
 								>
 									{item.label}
-								</a>
+								</Link>
 							)}
 						</div>
 					))}
@@ -157,10 +148,10 @@ const Navbar: React.FC = () => {
 				{/* Mobile Menu */}
 				<div
 					className={`
-            fixed top-0 right-0 min-h-screen w-3/5 bg-white shadow-lg 
-            transform transition-transform duration-300 ease-in-out z-50
-            ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
-          `}
+						fixed top-0 right-0 min-h-screen w-3/5 bg-white shadow-lg
+						transform transition-transform duration-300 ease-in-out z-50
+						${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
+					`}
 				>
 					<div className="p-6">
 						{/* Close Button */}
@@ -174,37 +165,65 @@ const Navbar: React.FC = () => {
 						{/* Mobile Menu Items */}
 						<div className="flex flex-col space-y-4 mt-12">
 							{menuItems.map((item, index) => (
-								<div key={index} className="group">
+								<div key={index}>
 									{item.subItems ? (
-										<div>
-											<div className="font-semibold text-lg mb-2 flex items-center justify-between">
+										<details className="group">
+											<summary
+												className="
+												cursor-pointer 
+												font-semibold 
+												text-lg 
+												w-full 
+												text-left 
+												list-none 
+												flex 
+												justify-between 
+												items-center
+												hover:bg-gray-100 
+												p-2 
+												rounded
+											"
+											>
 												{item.label}
-												{activeDropdown ===
-												item.label ? (
-													<ChevronUp />
-												) : (
-													<ChevronDown />
+												<span className="transform group-open:rotate-180 transition-transform">
+													▼
+												</span>
+											</summary>
+											<div className="pl-4 mt-2 space-y-2">
+												{item.subItems.map(
+													(subItem, subIndex) => (
+														<Link
+															onClick={() =>
+																setIsMobileMenuOpen(
+																	false
+																)
+															}
+															key={subIndex}
+															to={subItem.href}
+															className="
+															block 
+															py-2 
+															text-gray-700 
+															hover:bg-gray-100 
+															rounded
+														"
+														>
+															{subItem.label}
+														</Link>
+													)
 												)}
 											</div>
-											{item.subItems.map(
-												(subItem, subIndex) => (
-													<a
-														key={subIndex}
-														href={subItem.href}
-														className="block py-2 hover:bg-gray-100 rounded"
-													>
-														{subItem.label}
-													</a>
-												)
-											)}
-										</div>
+										</details>
 									) : (
-										<a
-											href={item.href}
+										<Link
+											onClick={() =>
+												setIsMobileMenuOpen(false)
+											}
+											to={item.href}
 											className="block py-2 hover:bg-gray-100 rounded"
 										>
 											{item.label}
-										</a>
+										</Link>
 									)}
 								</div>
 							))}
