@@ -44,7 +44,7 @@ const FAQAccordion: React.FC = () => {
 					variant="shadow"
 					showDivider={true}
 					itemClasses={itemClasses}
-					className="px-0 border border-gray-300 rounded-lg divide-y divide-gray-300"
+					className="px-0 border border-gray-300 rounded-lg overflow-hidden divide-y divide-gray-300"
 				>
 					{faqData.map((faq, index) => (
 						<AccordionItem

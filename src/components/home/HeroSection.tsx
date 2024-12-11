@@ -1,5 +1,5 @@
-import DrivingMan from "../assets/DrivingManFinal.jpg";
-import Reveal from "../components/Reveal";
+import DrivingMan from "../../assets/DrivingManFinal.jpg";
+import Reveal from "../Reveal";
 
 const HeroSection = () => {
 	return (

@@ -1,8 +1,8 @@
-import AboutHome from "../components/AboutHome";
-import HeroSection from "../components/HeroSection";
-import ServicesHome from "../components/ServicesHome";
+import AboutHome from "../components/home/AboutHome";
+import HeroSection from "../components/home/HeroSection";
+import ServicesHome from "../components/home/ServicesHome";
 import Contact from "../components/Contact";
-import FAQAccordion from "../components/Faq";
+import FAQAccordion from "../components/home/Faq";
 import Footer from "../components/Footer";
 
 const Home = () => {
