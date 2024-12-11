@@ -1,5 +1,5 @@
 import React from "react";
-import speedingCar from "../assets/speedingCar.jpg";
+import speedingCar from "../assets/speedingCar.jpeg";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";

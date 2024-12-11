@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
 		}
 	}, [success]);
 	return (
-		<section className="min-h-[90vh]  px-6 pt-32 bg-white">
+		<section className="min-h-[90vh] pt-20 mb-15  px-6 md:pt-32 bg-white">
 			{/* Left Section with text and image */}
 			<Reveal from="bottom">
 				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 text-center">
