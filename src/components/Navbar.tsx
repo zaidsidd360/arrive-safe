@@ -29,13 +29,13 @@ const Navbar: React.FC = () => {
 
 	return (
 		<nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg shadow-md z-[9999]">
-			<div className="container mx-auto px-4 flex justify-between items-center h-24">
+			<div className="container mx-auto md:px-4 flex justify-between items-center h-24">
 				{/* Logo - Increased size */}
 				<div className="flex items-center">
 					<img
 						src={Logo}
 						alt="Driving School Logo"
-						className="h-[15rem] w-auto object-contain"
+						className="h-[10rem] md:h-[15rem] w-auto object-contain"
 					/>
 				</div>
 
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
 				</div>
 
 				{/* Mobile Hamburger Icon */}
-				<div className="md:hidden">
+				<div className="md:hidden mr-5 mt-2">
 					<button
 						onClick={toggleMobileMenu}
 						className="focus:outline-none"

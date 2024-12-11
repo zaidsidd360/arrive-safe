@@ -25,25 +25,22 @@ const AboutHome: React.FC = () => {
 							About Arrive Safe Driving School
 						</h2>
 						<p className="text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed">
-							Driving is a life-changing skill. Choosing the best
-							driving school in Adelaide helps you master road
-							rules, gain confidence, and drive safely. At Driving
-							School of Adelaide, we aim to provide beginner
-							drivers with the essential knowledge and skills to
-							ensure they are confident and safe on the road. With
-							highly trained and professional instructors, we
-							guarantee a supportive and enjoyable learning
-							experience for a smooth journey to becoming a
-							licensed driver. Driving is a life-changing skill.
-							Choosing the best driving school in Adelaide helps
-							you master road rules, gain confidence, and drive
-							safely. At Driving School of Adelaide, we aim to
-							provide beginner drivers with the essential
-							knowledge and skills to ensure they are confident
-							and safe on the road. With highly trained and
-							professional instructors, we guarantee a supportive
-							and enjoyable learning experience for a smooth
-							journey to becoming a licensed driver.
+							Arrive Safe Driving School in Adelaide equips new
+							drivers with the essential skills and confidence to
+							navigate the roads safely. Our highly trained
+							instructors provide a supportive and engaging
+							learning experience, ensuring students master road
+							rules and become licensed drivers with ease. By
+							choosing Arrive Safe, you'll embark on a
+							transformative journey, gaining the knowledge and
+							abilities to drive responsibly and securely. Our
+							comprehensive curriculum and personalized approach
+							empower beginners to feel at ease behind the wheel,
+							ultimately contributing to safer communities.
+							Whether you're seeking automatic or manual driving
+							lessons, Arrive Safe Driving School is dedicated to
+							guiding you through every step towards becoming a
+							proficient and confident driver.
 						</p>
 						<Link
 							to={"/lessons/manual"}
