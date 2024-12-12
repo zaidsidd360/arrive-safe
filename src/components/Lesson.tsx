@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
+import { Link } from "react-router-dom";
 
 interface LessonProps {
 	lessonName: string;
@@ -86,12 +87,13 @@ const Lesson = ({
 							become a confident{" "}
 							{lessonName.split(" ")[0].toLowerCase()} driver.
 						</p>
-						<button
+						<Link
+							to={"/contact"}
 							className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold 
               hover:bg-blue-50 transition-all duration-300"
 						>
 							Book Your Lesson Now
-						</button>
+						</Link>
 					</div>
 				</Reveal>
 			</div>

@@ -1,5 +1,7 @@
 import Manual from "../../assets/manual.jpeg";
 import Automatic from "../../assets/auto.webp";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
 	return (
@@ -39,6 +41,13 @@ const OurServices = () => {
 							vehicle. Wondering how to start your vehicle on a
 							hill? Do you grind your car's gearbox...
 						</p>
+						<Link
+							to="/lessons/manual"
+							className="inline-flex items-center text-[#6074ad] font-semibold hover:text-blue-700 transition-colors duration-200 group"
+						>
+							Learn More
+							<ArrowRight className="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+						</Link>
 					</div>
 				</div>
 
@@ -62,6 +71,13 @@ const OurServices = () => {
 							experienced instructors will teach you everything
 							you need...
 						</p>
+						<Link
+							to="/lessons/automatic"
+							className="inline-flex items-center text-[#6074ad] font-semibold hover:text-blue-700 transition-colors duration-200 group"
+						>
+							Learn More
+							<ArrowRight className="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+						</Link>
 					</div>
 				</div>
 			</div>

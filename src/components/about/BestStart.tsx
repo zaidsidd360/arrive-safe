@@ -8,7 +8,7 @@ const BestStart = () => {
 			{/* Header Section */}
 			<div className="text-center mb-16">
 				<h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
-					Get The Best Start with Us
+					Start Your Driving Journey with Us
 				</h2>
 				<p className="text-gray-600 max-w-3xl mx-auto text-lg">
 					Arrive Safe Driving School specializes in comprehensive

@@ -43,7 +43,7 @@ const AboutHome: React.FC = () => {
 							proficient and confident driver.
 						</p>
 						<Link
-							to={"/lessons/manual"}
+							to={"/about"}
 							className="absolute bottom-0 right-0 text-white bg-accent hover:bg-primary/50 font-bold py-2 px-4 rounded-sm flex items-center justify-center transition-all duration-200 group"
 						>
 							Learn More

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../assets/logoTrans.png";
-import { X, Menu } from "lucide-react";
+import { X, Menu, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
@@ -180,14 +180,14 @@ const Navbar: React.FC = () => {
 												justify-between 
 												items-center
 												hover:bg-gray-100 
-												p-2 
 												rounded
 											"
 											>
 												{item.label}
-												<span className="transform group-open:rotate-180 transition-transform">
+												{/* <span >
 													▼
-												</span>
+												</span> */}
+												<ChevronDown className="transform group-open:rotate-180 transition-transform" />
 											</summary>
 											<div className="pl-4 mt-2 space-y-2">
 												{item.subItems.map(
@@ -205,6 +205,7 @@ const Navbar: React.FC = () => {
 															py-2 
 															text-gray-700 
 															hover:bg-gray-100 
+                              font-semibold
 															rounded
 														"
 														>
@@ -220,7 +221,7 @@ const Navbar: React.FC = () => {
 												setIsMobileMenuOpen(false)
 											}
 											to={item.href}
-											className="block py-2 hover:bg-gray-100 rounded"
+											className="block py-2 font-semibold hover:bg-gray-100 rounded"
 										>
 											{item.label}
 										</Link>
