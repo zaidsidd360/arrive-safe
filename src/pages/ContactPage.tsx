@@ -1,4 +1,3 @@
-import React from "react";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
