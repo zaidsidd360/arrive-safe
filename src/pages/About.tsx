@@ -5,6 +5,7 @@ import AboutOfferings from "../components/about/AboutOfferings";
 import BestStart from "../components/about/BestStart";
 import WhyChooseUs from "../components/about/WhyChooseUs";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 
 const About = () => {
 	const bannerProps = {
@@ -20,6 +21,7 @@ const About = () => {
 			<AboutOfferings />
 			<BestStart />
 			<WhyChooseUs />
+			<Contact />
 			<Footer />
 		</>
 	);

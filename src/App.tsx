@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import { NextUIProvider } from "@nextui-org/system";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import ManualLesson from "./pages/ManualLesson";
+import AutoLesson from "./pages/AutoLesson";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
 	return (
@@ -14,6 +17,9 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/services" element={<Services />} />
+					<Route path="/lessons/manual" element={<ManualLesson />} />
+					<Route path="/lessons/automatic" element={<AutoLesson />} />
+					<Route path="/contact" element={<ContactPage />} />
 				</Routes>
 			</BrowserRouter>
 		</NextUIProvider>

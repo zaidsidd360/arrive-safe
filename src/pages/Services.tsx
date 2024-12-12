@@ -1,5 +1,8 @@
 import ServicesBanner from "../assets/servicesBanner.svg";
 import Banner from "../components/Banner";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
+import OurServices from "../components/services/OurServices";
 
 const Services = () => {
 	const bannerProps = {
@@ -11,6 +14,9 @@ const Services = () => {
 	return (
 		<>
 			<Banner {...bannerProps} />
+			<OurServices />
+			<Contact />
+			<Footer />
 		</>
 	);
 };

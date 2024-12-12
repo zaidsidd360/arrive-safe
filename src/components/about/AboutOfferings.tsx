@@ -3,12 +3,12 @@ import AboutOffering from "../../assets/aboutOffering.webp";
 
 const AboutOfferings = () => {
 	const offeringsList = [
-		"Customised driving lessons for all",
-		"Highly trained instructors",
-		"Higher first-time pass rate compared to other driving schools",
-		"24x7 support",
-		"Logbook driving lessons",
-		"Opportunity to talk to instructors before booking a course",
+		"Personalized driving lessons designed for everyone",
+		"Professional and experienced instructors",
+		"Better first-attempt pass rates than most other driving schools",
+		"24/7 customer support for your convenience",
+		"Structured logbook lessons to track your progress",
+		"An option to consult with instructors before enrolling in a course",
 	];
 
 	return (
@@ -26,8 +26,9 @@ const AboutOfferings = () => {
 						Arrive Safe Driving School Offers
 					</h2>
 					<p className="text-sm md:text-base lg:text-lg text-gray-300 mb-6">
-						When you opt for Arrive Safe Driving School, you will
-						learn to drive smoothly. Some of our offerings are:
+						When you choose Arrive Safe Driving School, you'll gain
+						the skills to drive confidently and effortlessly. Here’s
+						what we offer:
 					</p>
 					<ul className="space-y-4">
 						{offeringsList.map((item, index) => (

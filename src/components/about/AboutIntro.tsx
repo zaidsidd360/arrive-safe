@@ -68,10 +68,11 @@ const AboutIntro = () => {
 						Booking Guidelines
 					</h3>
 					<p className="text-gray-600">
-						We value your time and commitment. A 48-hour notice is
-						required for any schedule changes. Rescheduling is
-						available subject to instructor availability, ensuring a
-						smooth learning experience for all students.
+						We value your time and commitment. In case of
+						rescheduling or cancellation, a 24-hour notice is
+						required. Rescheduling is available subject to
+						instructor availability, ensuring a smooth learning
+						experience for all students.
 					</p>
 				</div>
 			</div>

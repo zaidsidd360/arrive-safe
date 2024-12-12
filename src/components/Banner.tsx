@@ -14,7 +14,7 @@ const Banner: React.FC<BannerProps> = ({
 	illustrationAlt = `${title} illustration`,
 }) => {
 	return (
-		<div className="relative bg-gradient-to-b from-[#6074ad] to-transparent overflow-hidden mt-16 md:mt-10">
+		<div className="relative bg-gradient-to-b from-[#6074ad] to-transparent overflow-hidden mt-16 md:mt-24">
 			<div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					{/* Text Content */}

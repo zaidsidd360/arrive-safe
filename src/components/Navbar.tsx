@@ -28,8 +28,8 @@ const Navbar: React.FC = () => {
 	];
 
 	return (
-		<nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg shadow-md z-[9999]">
-			<div className="container mx-auto md:px-4 flex justify-between items-center h-24">
+		<nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg z-[9999]">
+			<div className="md:mx-auto md:px-4 flex justify-between items-center h-20 md:h-24 max-w-[92.5%] md:max-w-[100%] lg:max-w-[90%] xl:max-w-[75%]">
 				{/* Logo */}
 				<Link to={"/"} className="flex items-center">
 					<img
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
 				</Link>
 
 				{/* Desktop Navigation */}
-				<div className="hidden md:flex space-x-6 items-center">
+				<div className="hidden md:flex md:space-x-1 lg:space-x-6 items-center">
 					{menuItems.map((item, index) => (
 						<div
 							key={index}
