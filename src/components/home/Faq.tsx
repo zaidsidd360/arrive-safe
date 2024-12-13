@@ -49,9 +49,12 @@ const FAQAccordion: React.FC = () => {
 					{faqData.map((faq, index) => (
 						<AccordionItem
 							key={index}
-							title=<h1 className="font-semibold text-lg md:text-xl text-dark">
-								{faq.title}
-							</h1>
+							textValue={faq.title}
+							title={
+								<h1 className="font-semibold text-lg md:text-xl text-dark">
+									{faq.title}
+								</h1>
+							}
 						>
 							{faq.content}
 						</AccordionItem>

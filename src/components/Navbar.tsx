@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Logo from "../assets/logoTrans.png";
-import { X, Menu, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { X, Menu } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+	const location = useLocation();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -11,12 +12,19 @@ const Navbar: React.FC = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
 	};
 
+	const isActiveRoute = (href: string) => {
+		if (href === "/") {
+			return location.pathname === "/";
+		}
+		return location.pathname.startsWith(href);
+	};
+
 	const menuItems = [
 		{ label: "Home", href: "/" },
 		{ label: "About Us", href: "/about" },
-		{ label: "Services", href: "/services" },
 		{
-			label: "Packages and Lessons",
+			label: "Services",
+			href: "/services",
 			subItems: [
 				{ label: "Manual Driving Lesson", href: "/lessons/manual" },
 				{
@@ -25,6 +33,7 @@ const Navbar: React.FC = () => {
 				},
 			],
 		},
+		{ label: "Packages and Lessons", href: "/packages-lessons" },
 	];
 
 	return (
@@ -54,20 +63,24 @@ const Navbar: React.FC = () => {
 						>
 							{item.subItems ? (
 								<>
-									<button
-										className="
+									<Link
+										to={item.href}
+										className={`
 											flex items-center
 											px-4 py-2
 											text-lg
-											hover:bg-blue-50
-											hover:text-blue-600
 											rounded-lg
 											transition-all
 											duration-300
-										"
+											${
+												isActiveRoute(item.href)
+													? "bg-blue-50 text-blue-600"
+													: "hover:bg-blue-50 hover:text-blue-600"
+											}
+										`}
 									>
 										{item.label}
-									</button>
+									</Link>
 									{activeDropdown === item.label && (
 										<div
 											className="
@@ -87,6 +100,11 @@ const Navbar: React.FC = () => {
 											{item.subItems.map(
 												(subItem, subIndex) => (
 													<Link
+														onClick={() =>
+															setActiveDropdown(
+																null
+															)
+														}
 														key={subIndex}
 														to={subItem.href}
 														className="
@@ -110,15 +128,18 @@ const Navbar: React.FC = () => {
 							) : (
 								<Link
 									to={item.href}
-									className="
+									className={`
 										text-lg
 										px-4 py-3
-										hover:bg-blue-50
-										hover:text-blue-600
 										rounded-lg
 										transition-all
 										duration-300
-									"
+										${
+											isActiveRoute(item.href)
+												? "bg-blue-50 text-blue-600"
+												: "hover:bg-blue-50 hover:text-blue-600"
+										}
+									`}
 								>
 									{item.label}
 								</Link>
@@ -167,61 +188,52 @@ const Navbar: React.FC = () => {
 							{menuItems.map((item, index) => (
 								<div key={index}>
 									{item.subItems ? (
-										<details className="group">
-											<summary
-												className="
-												cursor-pointer 
-												font-semibold 
-												text-lg 
-												w-full 
-												text-left 
-												list-none 
-												flex 
-												justify-between 
-												items-center
-												hover:bg-gray-100 
-												rounded
-											"
+										<>
+											<Link
+												onClick={() =>
+													setIsMobileMenuOpen(false)
+												}
+												to={item.href}
+												className={`block py-2 font-semibold rounded
+													${isActiveRoute(item.href) ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"}
+												`}
 											>
 												{item.label}
-												{/* <span >
-													▼
-												</span> */}
-												<ChevronDown className="transform group-open:rotate-180 transition-transform" />
-											</summary>
-											<div className="pl-4 mt-2 space-y-2">
-												{item.subItems.map(
-													(subItem, subIndex) => (
-														<Link
-															onClick={() =>
-																setIsMobileMenuOpen(
-																	false
+											</Link>
+											{item.subItems.map(
+												(subItem, subIndex) => (
+													<Link
+														onClick={() =>
+															setIsMobileMenuOpen(
+																false
+															)
+														}
+														key={subIndex}
+														to={subItem.href}
+														className={`block py-2 pl-6 rounded
+															${
+																isActiveRoute(
+																	subItem.href
 																)
+																	? "bg-blue-50 text-blue-600"
+																	: "text-gray-700 hover:bg-gray-100"
 															}
-															key={subIndex}
-															to={subItem.href}
-															className="
-															block 
-															py-2 
-															text-gray-700 
-															hover:bg-gray-100 
-                              font-semibold
-															rounded
-														"
-														>
-															{subItem.label}
-														</Link>
-													)
-												)}
-											</div>
-										</details>
+														`}
+													>
+														{subItem.label}
+													</Link>
+												)
+											)}
+										</>
 									) : (
 										<Link
 											onClick={() =>
 												setIsMobileMenuOpen(false)
 											}
 											to={item.href}
-											className="block py-2 font-semibold hover:bg-gray-100 rounded"
+											className={`block py-2 font-semibold rounded
+												${isActiveRoute(item.href) ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"}
+											`}
 										>
 											{item.label}
 										</Link>

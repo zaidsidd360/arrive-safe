@@ -2,6 +2,7 @@ import Auto from "../assets/auto.webp";
 import Lesson from "../components/Lesson";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Reveal from "../components/Reveal";
 
 const AutoLesson = () => {
 	const automaticLessonProps = {
@@ -21,11 +22,11 @@ const AutoLesson = () => {
 	};
 
 	return (
-		<>
+		<Reveal duration={0.5} from="inPlace">
 			<Lesson {...automaticLessonProps} />
 			<Contact />
 			<Footer />
-		</>
+		</Reveal>
 	);
 };
 

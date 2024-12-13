@@ -6,6 +6,7 @@ import BestStart from "../components/about/BestStart";
 import WhyChooseUs from "../components/about/WhyChooseUs";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
+import Reveal from "../components/Reveal";
 
 const About = () => {
 	const bannerProps = {
@@ -15,7 +16,7 @@ const About = () => {
 		illustration: BannerIllustration,
 	};
 	return (
-		<>
+		<Reveal duration={0.5} from="inPlace">
 			<Banner {...bannerProps} />
 			<AboutIntro />
 			<AboutOfferings />
@@ -23,7 +24,7 @@ const About = () => {
 			<WhyChooseUs />
 			<Contact />
 			<Footer />
-		</>
+		</Reveal>
 	);
 };
 

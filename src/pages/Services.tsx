@@ -2,6 +2,7 @@ import ServicesBanner from "../assets/servicesBanner.svg";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Reveal from "../components/Reveal";
 import OurServices from "../components/services/OurServices";
 
 const Services = () => {
@@ -12,12 +13,12 @@ const Services = () => {
 		illustration: ServicesBanner,
 	};
 	return (
-		<>
+		<Reveal duration={0.5} from="inPlace">
 			<Banner {...bannerProps} />
 			<OurServices />
 			<Contact />
 			<Footer />
-		</>
+		</Reveal>
 	);
 };
 

@@ -31,13 +31,13 @@ const HeroSection = () => {
 			>
 				{/* Left Content */}
 				<div className="lg:w-1/2  lg:text-left p-5">
-					<Reveal from="bottom">
+					<Reveal from="bottom" duration={0.5}>
 						<h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
 							Drive with Confidence. <br />
 							<span className="text-accent">Arrive Safe.</span>
 						</h1>
 					</Reveal>
-					<Reveal from="bottom" duration={0.7}>
+					<Reveal from="bottom" duration={2 * 0.5}>
 						<p className="mt-6 text-base md:text-lg lg:text-xl text-white leading-relaxed">
 							{/* Learn to navigate the roads safely with our expert
 						instructors, tailored lessons, and modern techniques.
@@ -50,7 +50,7 @@ const HeroSection = () => {
 							a call now
 						</p>
 					</Reveal>
-					<Reveal from="bottom" duration={0.8}>
+					<Reveal from="bottom" duration={3 * 0.5}>
 						<div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 							{/* <a
 								href="#"

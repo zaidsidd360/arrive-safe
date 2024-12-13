@@ -2,6 +2,7 @@ import Manual from "../assets/manual.jpeg";
 import Lesson from "../components/Lesson";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import Reveal from "../components/Reveal";
 
 const ManualLesson = () => {
 	const manualLessonProps = {
@@ -21,11 +22,11 @@ const ManualLesson = () => {
 	};
 
 	return (
-		<>
+		<Reveal duration={0.5} from="inPlace">
 			<Lesson {...manualLessonProps} />
 			<Contact />
 			<Footer />
-		</>
+		</Reveal>
 	);
 };
 
