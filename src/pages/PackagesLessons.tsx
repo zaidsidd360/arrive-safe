@@ -1,4 +1,3 @@
-import React from "react";
 import PackageLessonDetails from "../components/packagelessons/PackageLessonDetails";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
