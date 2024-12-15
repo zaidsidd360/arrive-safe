@@ -1,4 +1,4 @@
-import Manual from "../assets/manual.jpeg";
+import Manual from "../assets/manualPage.webp";
 import Lesson from "../components/Lesson";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";

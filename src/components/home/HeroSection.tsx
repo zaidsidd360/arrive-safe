@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DrivingMan from "../../assets/DrivingManFinal.jpg";
+import DrivingMan from "../../assets/DrivingManFinal.webp";
 import Reveal from "../Reveal";
 import { ArrowRight } from "lucide-react";
 
@@ -14,9 +14,7 @@ const HeroSection = () => {
 				<div className="absolute inset-0 bg-black opacity-60"></div>
 			</div>
 
-			{/* Right Content with Image */}
 			<div className=" md:hidden relative w-full">
-				{/* Image - Full Width on Desktop, Bottom on Mobile */}
 				<img
 					src={DrivingMan}
 					alt="Hero Driving Illustration"
@@ -39,9 +37,6 @@ const HeroSection = () => {
 					</Reveal>
 					<Reveal from="bottom" duration={2 * 0.5}>
 						<p className="mt-6 text-base md:text-lg lg:text-xl text-white leading-relaxed">
-							{/* Learn to navigate the roads safely with our expert
-						instructors, tailored lessons, and modern techniques.
-						Let’s make driving stress-free and enjoyable! */}
 							Arrive Safe is a driving school that provides the
 							skills required to be a confident and safe driver.
 							Learn automatic and manual driving lessons from
@@ -51,13 +46,7 @@ const HeroSection = () => {
 						</p>
 					</Reveal>
 					<Reveal from="bottom" duration={3 * 0.5}>
-						<div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-							{/* <a
-								href="#"
-								className="px-6 md:px-8 py-3 md:py-4 bg-accent text-dark font-bold rounded-lg border border-accent hover:bg-yellow-500 hover:text-dark transition duration-300"
-							>
-								Book a Lesson
-							</a> */}
+						<div className="mt-8 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
 							<Link
 								to="/contact"
 								className="flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-[#6c83c0] text-white rounded-lg hover:bg-[#778fd1] transition duration-300 text-xl font-normal group"

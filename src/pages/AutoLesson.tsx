@@ -1,4 +1,4 @@
-import Auto from "../assets/auto.webp";
+import Auto from "../assets/autoServices.webp";
 import Lesson from "../components/Lesson";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";

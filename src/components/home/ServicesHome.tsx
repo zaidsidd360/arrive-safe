@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Manual from "../../assets/manual.webp";
-import Automatic from "../../assets/auto.webp";
+import Automatic from "../../assets/autoServices.webp";
 import Reveal from "../Reveal";
 
 const ServicesHome = () => {

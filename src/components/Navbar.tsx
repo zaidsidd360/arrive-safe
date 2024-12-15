@@ -74,8 +74,8 @@ const Navbar: React.FC = () => {
 											duration-300
 											${
 												isActiveRoute(item.href)
-													? "bg-blue-50 text-blue-600"
-													: "hover:bg-blue-50 hover:text-blue-600"
+													? "bg-blue-50 text-[#6074ad]"
+													: "hover:bg-blue-50 hover:text-[#6074ad]"
 											}
 										`}
 									>
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
 														py-2 
 														text-gray-700 
 														hover:bg-blue-50 
-														hover:text-blue-600
+														hover:text-[#6074ad]
 														transition-colors
 														duration-200
 													"
@@ -136,8 +136,8 @@ const Navbar: React.FC = () => {
 										duration-300
 										${
 											isActiveRoute(item.href)
-												? "bg-blue-50 text-blue-600"
-												: "hover:bg-blue-50 hover:text-blue-600"
+												? "bg-blue-50 text-[#6074ad]"
+												: "hover:bg-blue-50 hover:text-[#6074ad]"
 										}
 									`}
 								>
@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
 				</div>
 
 				{/* Mobile Hamburger Icon */}
-				<div className="md:hidden mr-5 mt-2">
+				<div className="md:hidden mt-2">
 					<button
 						onClick={toggleMobileMenu}
 						className="focus:outline-none"
@@ -194,8 +194,8 @@ const Navbar: React.FC = () => {
 													setIsMobileMenuOpen(false)
 												}
 												to={item.href}
-												className={`block py-2 font-semibold rounded
-													${isActiveRoute(item.href) ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"}
+												className={`block p-2 font-semibold rounded
+													${isActiveRoute(item.href) ? "bg-blue-50 text-[#6074ad] " : "hover:bg-gray-100"}
 												`}
 											>
 												{item.label}
@@ -210,12 +210,12 @@ const Navbar: React.FC = () => {
 														}
 														key={subIndex}
 														to={subItem.href}
-														className={`block py-2 pl-6 rounded
+														className={`block py-2 pl-6 rounded 
 															${
 																isActiveRoute(
 																	subItem.href
 																)
-																	? "bg-blue-50 text-blue-600"
+																	? "bg-blue-50 text-[#6074ad] "
 																	: "text-gray-700 hover:bg-gray-100"
 															}
 														`}
@@ -231,8 +231,8 @@ const Navbar: React.FC = () => {
 												setIsMobileMenuOpen(false)
 											}
 											to={item.href}
-											className={`block py-2 font-semibold rounded
-												${isActiveRoute(item.href) ? "bg-blue-50 text-blue-600" : "hover:bg-gray-100"}
+											className={`block p-2 font-semibold rounded 
+												${isActiveRoute(item.href) ? "bg-blue-50 text-[#6074ad]" : "hover:bg-gray-100"}
 											`}
 										>
 											{item.label}

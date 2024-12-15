@@ -10,13 +10,15 @@ import ContactPage from "./pages/ContactPage";
 import PackagesLessons from "./pages/PackagesLessons";
 import Error404 from "./pages/Error404";
 import ScrollToTop from "./components/ScrollToTop";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 const AppContent = () => {
 	const location = useLocation();
 	const isErrorPage =
 		location.pathname !== "/" &&
 		!location.pathname.match(
-			/^\/(?:about|services|lessons\/(?:manual|automatic)|packages-lessons|contact)$/
+			/^\/(?:about|services|lessons\/(?:manual|automatic)|packages-lessons|contact|privacy-policy|terms-and-conditions)$/
 		);
 
 	return (
@@ -31,6 +33,11 @@ const AppContent = () => {
 				<Route path="/lessons/automatic" element={<AutoLesson />} />
 				<Route path="/packages-lessons" element={<PackagesLessons />} />
 				<Route path="/contact" element={<ContactPage />} />
+				<Route path="/privacy-policy" element={<PrivacyPolicy />} />
+				<Route
+					path="/terms-and-conditions"
+					element={<TermsConditions />}
+				/>
 				<Route path="*" element={<Error404 />} />
 			</Routes>
 		</>

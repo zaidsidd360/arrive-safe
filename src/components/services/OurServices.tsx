@@ -1,5 +1,5 @@
-import Manual from "../../assets/manual.jpeg";
-import Automatic from "../../assets/auto.webp";
+import Manual from "../../assets/manualPage.webp";
+import Automatic from "../../assets/autoServices.webp";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ const OurServices = () => {
 							Manual Driving Lessons
 						</h3>
 						<p className="text-gray-600 mb-4">
-							Here at Driving School of Adelaide, our instructors
+							Here at Arrive Safe Driving School, our instructors
 							will teach you the ins and outs of driving a manual
 							vehicle. Wondering how to start your vehicle on a
 							hill? Do you grind your car's gearbox...
