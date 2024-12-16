@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import { NextUIProvider } from "@nextui-org/system";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import ManualLesson from "./pages/ManualLesson";
@@ -48,11 +47,9 @@ const AppContent = () => {
 
 function App() {
 	return (
-		<NextUIProvider>
-			<BrowserRouter>
-				<AppContent />
-			</BrowserRouter>
-		</NextUIProvider>
+		<BrowserRouter>
+			<AppContent />
+		</BrowserRouter>
 	);
 }
 

@@ -1,15 +1,9 @@
-import React from "react";
-import { Accordion, AccordionItem } from "@nextui-org/accordion";
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-const FAQAccordion: React.FC = () => {
-	const itemClasses = {
-		base: "py-0 w-full",
-		title: "font-normal text-medium",
-		trigger:
-			"px-2 py-0 data-[hover=true]:bg-blue-100 data-[open=true]:bg-blue-100 h-14 flex items-center",
-		indicator: "text-medium",
-		content: "text-md px-2 bg-white",
-	};
+const Faq: React.FC = () => {
+	const [openItems, setOpenItems] = useState<number[]>([]);
+
 	const faqData = [
 		{
 			title: "How many driving lessons will I need?",
@@ -28,8 +22,16 @@ const FAQAccordion: React.FC = () => {
 		},
 	];
 
+	const toggleItem = (index: number) => {
+		setOpenItems((prev) =>
+			prev.includes(index)
+				? prev.filter((i) => i !== index)
+				: [...prev, index]
+		);
+	};
+
 	return (
-		<section className=" min-w-full bg-[#f2f5f7] py-10">
+		<section className="min-w-full bg-[#f2f5f7] py-10">
 			<div className="md:max-w-[90%] lg:max-w-[80%] xl:max-w-[70%] 2xl:max-w-[65%] mx-auto my-8 sm:my-12 px-4 sm:px-0">
 				<h2 className="text-3xl md:text-4xl lg:text-5xl text-center font-bold mb-6 text-dark">
 					Frequently Asked Questions
@@ -39,30 +41,82 @@ const FAQAccordion: React.FC = () => {
 					Don't worry if you still have some doubts. Our experts would
 					love to answer your questions. They are available 24x7.
 				</p>
-				<Accordion
-					selectionMode="multiple"
-					variant="shadow"
-					showDivider={true}
-					itemClasses={itemClasses}
-					className="px-0 border border-gray-300 rounded-lg overflow-hidden divide-y divide-gray-300"
-				>
+
+				<div className="space-y-4">
 					{faqData.map((faq, index) => (
-						<AccordionItem
+						<div
 							key={index}
-							textValue={faq.title}
-							title={
-								<h1 className="font-semibold text-lg md:text-xl text-dark">
+							className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out"
+						>
+							<div
+								onClick={() => toggleItem(index)}
+								className={`
+                                    px-4 py-4 flex items-center justify-between cursor-pointer
+                                    relative group
+                                    ${
+										openItems.includes(index)
+											? "bg-[#6074ad]/10 text-[#6074ad]"
+											: "hover:bg-[#6074ad]/5 text-dark"
+									}
+                                    transition-colors duration-200
+                                `}
+							>
+								<h1 className="font-semibold text-lg md:text-xl flex-grow pr-4">
 									{faq.title}
 								</h1>
-							}
-						>
-							{faq.content}
-						</AccordionItem>
+								<div className="transition-transform duration-300">
+									{openItems.includes(index) ? (
+										<ChevronUp className="text-[#6074ad]" />
+									) : (
+										<ChevronDown className="text-gray-600 group-hover:text-[#6074ad]" />
+									)}
+								</div>
+								<div
+									className={`
+                                        absolute bottom-0 left-0 h-0.5 bg-[#6074ad] 
+                                        transition-all duration-300 ease-out
+                                        ${
+											openItems.includes(index)
+												? "w-full"
+												: "w-0"
+										}
+                                    `}
+								/>
+							</div>
+							{openItems.includes(index) && (
+								<div
+									className="
+                                        px-4 py-4 text-gray-700 
+                                        animate-fade-in-down
+                                        border-t border-gray-200
+                                    "
+								>
+									{faq.content}
+								</div>
+							)}
+						</div>
 					))}
-				</Accordion>
+				</div>
 			</div>
+
+			<style>{`
+                @keyframes fadeInDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .animate-fade-in-down {
+                    animation: fadeInDown 0.3s ease-out;
+                }
+            `}</style>
 		</section>
 	);
 };
 
-export default FAQAccordion;
+export default Faq;
