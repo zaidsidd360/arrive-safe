@@ -12,6 +12,7 @@ import Error404 from "./pages/Error404";
 import ScrollToTop from "./components/ScrollToTop";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const AppContent = () => {
 	const location = useLocation();
@@ -24,6 +25,7 @@ const AppContent = () => {
 	return (
 		<>
 			<ScrollToTop />
+			<ScrollToTopButton />
 			{!isErrorPage && <Navbar />}
 			<Routes>
 				<Route path="/" element={<Home />} />
